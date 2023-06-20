@@ -1,0 +1,15 @@
+permissions:
+  scopes:
+    - read:jira-work
+    - write:page:confluence
+modules:
+  trigger:
+    - key: team-23-demo-hello-world
+      function: main
+      events:
+        - avi:jira:created:issue
+  function:
+    - key: main
+      handler: index.onIssueCreated
+app:
+  id: ari:cloud:ecosystem::app/74b868a0-bf6e-48ab-b53e-042d46e81b74
